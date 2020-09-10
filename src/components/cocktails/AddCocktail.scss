@@ -1,0 +1,93 @@
+@import '../../styles.scss';
+
+.fields {
+    display: flex;
+    flex-direction: column;
+
+    .field {
+        display: flex;
+        margin-bottom: 1rem;
+        align-items: center;
+
+        label {
+            width: 30%;
+            font-size: 1.2rem;
+        }
+
+        .input {
+            width: 70%;
+        }
+
+        .flavor-checkboxes {
+            label {
+                font-weight: bold;
+                margin-right: 1rem;
+            }
+        }
+    }
+
+    .error {
+        margin-left: 30%;
+        margin-bottom: 1rem;
+        margin-top: -0.7rem;
+        font-size: 1rem;
+        color: #ec5f5f;
+    }
+
+    .ingredients-field {
+        label {
+            align-self: flex-start;
+        }
+    }
+
+    .ingredients {
+
+        width: 70%;
+        padding: 1rem;
+        border: 1px solid #583535;
+        border-radius: 0.2rem;
+
+        .ingredient {
+            display: flex;
+            margin-bottom: 1rem;
+
+            .delete-ingredient {
+                background-color: $secondary-darker;
+                color: $grey-darker;
+                border: none;
+                width: 2rem;
+                height: 2rem;
+                flex: none;
+                align-self: center;
+                margin-right: 0.5rem;
+                border-radius: 50%;
+                line-height: 1rem;
+                outline: none;
+                cursor: pointer;
+            }
+
+            div {
+                align-self: center;
+                border-radius: 50%;
+                width: 2rem;
+                border: 1px solid;
+                text-align: center;
+                line-height: 1rem;
+                padding: 0.2rem;
+                margin-right: 0.5rem;
+            }
+
+            input {
+                display: flex;
+                margin-right: 0.5rem;
+            }
+        }
+
+        .line {
+            width: 100%;
+            height: 1px;
+            background-color: $secondary-lighter;
+            margin-bottom: 1rem;
+        }
+    }
+}

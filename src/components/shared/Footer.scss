@@ -1,0 +1,16 @@
+@import '../../styles.scss';
+
+.footer-container {
+    height: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .logos-sep {
+        width: 1px;
+        display: inline-block;
+        height: 2rem;
+        background-color: $grey-darker;
+        margin: 0 1rem;
+    }
+}
