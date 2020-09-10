@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Cocktail from './Cocktail';
 import './CocktailsMenu.scss';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { fetchAllCocktails } from '../../store/actions/cocktails';
 
-const CocktailsMenu = ({ cocktailModal, setCocktailModal, cocktails }) => {
+const CocktailsMenu = ({ cocktailModal, setCocktailModal, cocktails, dispatch }) => {
+
+    useEffect(() => {
+        dispatch();
+    }, [dispatch])
 
     return (
         cocktails && cocktailModal && (
@@ -31,4 +36,10 @@ const mapStateToProps = (state) => ({
     cocktails: state.cocktails
 });
 
-export default connect(mapStateToProps)(CocktailsMenu)
+const mapDispatchToProps = (dispatch) => {
+    return {
+        dispatch: () => dispatch(fetchAllCocktails())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CocktailsMenu)

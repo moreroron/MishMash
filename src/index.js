@@ -5,10 +5,19 @@ import App from './App';
 
 // redux
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import cocktails from './store/reducers/cocktails';
+import thunk from 'redux-thunk';
 
-const store = createStore(cocktails, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+import { firestore } from './firebase/config';
+
+const store = createStore(
+  cocktails,
+  compose(
+    applyMiddleware(thunk.withExtraArgument({ firestore })),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  )
+);
 
 ReactDOM.render(
   <React.StrictMode>
