@@ -1,5 +1,8 @@
 # dependencies
 node_modules
 
+# keys
+.env
+
 # production
 build

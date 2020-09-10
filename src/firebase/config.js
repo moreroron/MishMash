@@ -1,9 +1,10 @@
 import * as firebase from 'firebase/app';
 import 'firebase/storage';
 import 'firebase/firestore';
+const apiKey = process.env.REACT_APP_API_KEY;
 
 var firebaseConfig = {
-    apiKey: "AIzaSyCjc4KEzyLZO5tMxjN0kTXhkIAgJRBKY1I",
+    apiKey: apiKey,
     authDomain: "mishmash-c5f74.firebaseapp.com",
     databaseURL: "https://mishmash-c5f74.firebaseio.com",
     projectId: "mishmash-c5f74",
